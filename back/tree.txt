@@ -1,0 +1,62 @@
+.
+├── B2Bit - TweetLite.postman_collection.json
+├── .env.exemple
+├── PopulateDB
+│   └── management
+│       └── commands
+│           └── populate_db.py
+├── README.md
+├── follows
+│   ├── admin.py
+│   ├── apps.py
+│   ├── filters.py
+│   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── likes
+│   ├── admin.py
+│   ├── apps.py
+│   ├── filters.py
+│   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── media
+│   ├── profile_pics
+│   └── tweet_images
+├── requirements.txt
+├── tweetlite
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── tweets
+│   ├── admin.py
+│   ├── apps.py
+│   ├── filters.py
+│   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── signals.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+└── users
+    ├── admin.py
+    ├── apps.py
+    ├── filters.py
+    ├── models.py
+    ├── permissions.py
+    ├── serializers.py
+    ├── signals.py
+    ├── tests.py
+    ├── urls.py
+    └── views.py
+
+11 directories, 47 files

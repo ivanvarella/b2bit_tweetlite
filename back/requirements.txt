@@ -1,0 +1,17 @@
+asgiref==3.8.1
+cachetools==5.5.0
+Django==5.1.2
+django-cors-headers==4.5.0
+django-environ==0.11.2
+django-rql==4.4.1
+djangorestframework==3.15.2
+djangorestframework-simplejwt==5.3.1
+lark-parser==0.11.0
+lib-rql==2.0.2
+pillow==11.0.0
+psycopg2-binary==2.9.10
+PyJWT==2.9.0
+python-dateutil==2.9.0.post0
+six==1.16.0
+sqlparse==0.5.1
+typing_extensions==4.12.2

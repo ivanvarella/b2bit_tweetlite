@@ -1,0 +1,1369 @@
+{
+	"info": {
+		"_postman_id": "7432974e-fbeb-46ee-810f-e99bab913ca5",
+		"name": "B2Bit - TweetLite",
+		"description": "Django API (DRF) Documentation - B2Bit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38074810"
+	},
+	"item": [
+		{
+			"name": "JWT",
+			"item": [
+				{
+					"name": "Tokens",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NTY5MzM3LCJpYXQiOjE3Mjk1MzMzMzcsImp0aSI6ImYyODJmMmJmZmNlOTRmMzdiNTNkMzZkZThiZjc2YjA3IiwidXNlcl9pZCI6OH0.MBMUcqKx2dF-sXMpG6-8SlhexZ8lTy50DsFVEBCp8LY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@django.com\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"token",
+								""
+							]
+						},
+						"description": "To get a access and refresh token using an registred user."
+					},
+					"response": []
+				},
+				{
+					"name": "Tokens - Refresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyOTUzNjE5NiwiaWF0IjoxNzI5MzYzMzk2LCJqdGkiOiIyNTBiZTFmYzcyYzI0NDMzOTBmNWNlNzU4ZjBlZmY1OCIsInVzZXJfaWQiOjF9.ipnv6w8kgjMkciNCZZn_tAIJkIYi8DYZpWOSRrJ0ToQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDAwNDUwLCJpYXQiOjE3MjkzNjMzOTYsImp0aSI6IjRiMTA4YTJkMTFkMTQzNGFhY2UwODc2YWFlMDNkMmQ0IiwidXNlcl9pZCI6MX0.618U_-iax2RaqphSYj5vUXwaucy144BDCn3jFcVc-Yw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"token",
+								"refresh",
+								""
+							]
+						},
+						"description": "To get a new access token using a refresh token."
+					},
+					"response": []
+				}
+			],
+			"description": "JWT authentication"
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "users id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzE4Mjg2LCJpYXQiOjE3Mjk2ODIyODYsImp0aSI6IjQ3ZDBkNjg2ZDNmZTQzOWVhNmZmZDVjYTliMWJjNjAxIiwidXNlcl9pZCI6OH0.qQ8iBeE6MhI0wfP_y1xrzaCtWiYPtUHmG7FxY3p4kuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/users/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"3",
+								""
+							]
+						},
+						"description": "Once authenticated, obtain a user's data by their ID."
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzE4Mjg2LCJpYXQiOjE3Mjk2ODIyODYsImp0aSI6IjQ3ZDBkNjg2ZDNmZTQzOWVhNmZmZDVjYTliMWJjNjAxIiwidXNlcl9pZCI6OH0.qQ8iBeE6MhI0wfP_y1xrzaCtWiYPtUHmG7FxY3p4kuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						},
+						"description": "Once authenticated, obtain data from all users."
+					},
+					"response": []
+				},
+				{
+					"name": "Token + RQL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5ODkxODE0LCJpYXQiOjE3Mjk4NTU4MTQsImp0aSI6IjMxMzA0OTM1MzVhNjQ4OTZiMThlNjRiMDNhOWY5N2Y5IiwidXNlcl9pZCI6MX0.fVmlzpysgrT2Af2iJrEeV9C94P_rCedQSiuxh79Coi4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/users/?eq(email,admin@django.com)",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "eq(email,admin@django.com)",
+									"value": null
+								}
+							]
+						},
+						"description": "Once authenticated, example of using RQL (Resource Query Language) as filters."
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"junior\",\r\n    \"email\": \"junior@django.com\",\r\n    \"password\": \"123\",\r\n    \"profile_picture\": null,\r\n    \"first_name\": \"Junior\",\r\n    \"last_name\": \"da Silva Jr.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						},
+						"description": "Creating new users."
+					},
+					"response": []
+				},
+				{
+					"name": "Editar users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzI1NTU5LCJpYXQiOjE3Mjk2ODk1NTksImp0aSI6IjFhYWUwOGMxYTAxNTQ4ZGU4YmNmNWM4OTU2YzEwYjUzIiwidXNlcl9pZCI6OX0.JTME0PkNtL9vGA2VLG5T-GzIrQoyVKdN80XNmfp-s4Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bio\": \"Bio do junior!!!!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/users/9/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"9",
+								""
+							]
+						},
+						"description": "Once authenticated, parcial changes on user data. Only the user can make changes to their data."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NTc5NjYyLCJpYXQiOjE3Mjk1NDM2NjIsImp0aSI6ImNiZmJlMmVmYjY4MjQwOGRiNTNiNmI4ZGQwZjIzZWM3IiwidXNlcl9pZCI6NX0.tm6SfICimdGILnP53N5q7AShk8yjP9CEQ0zh9b5ZH-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"charles\",\r\n    \"email\": \"charles@django.com\",\r\n    \"first_name\": \"Charles\",\r\n    \"last_name\": \"Darwin\",\r\n    \"bio\": \"Esta é a biografia do usuário alterada com PUT.\",\r\n    \"profile_picture\": null,\r\n    \"password\": 123\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/2/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2",
+								""
+							]
+						},
+						"description": "Once authenticated, edit on user data. Only the user can make changes to their data."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NTgwMTMzLCJpYXQiOjE3Mjk1NDQxMzMsImp0aSI6IjMzZGE4NWY3NDcxODQ4M2Y4ZDlhYTgxZTZjNzNhMDI4IiwidXNlcl9pZCI6N30.oUi4bO2uXWDtQfH2iHhn-2UHvJeU63Gib3A-eeVaLks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/users/7/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"7",
+								""
+							]
+						},
+						"description": "Once authenticated, delete a user. Only the user can delete their own account."
+					},
+					"response": []
+				}
+			],
+			"description": "Users data"
+		},
+		{
+			"name": "tweets",
+			"item": [
+				{
+					"name": "tweets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzIyNjU3LCJpYXQiOjE3Mjk2ODY2NTcsImp0aSI6ImFiZGQ5MTBmNTQzMjRjM2E5YWZkNGI1NTJhOTkzOGY4IiwidXNlcl9pZCI6OH0.QGNgTLLQd7stG8PcKpkYSEenszUGdO2tM7mr4tXLDCU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tweets/?limit=5&offset=5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tweets",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "offset",
+									"value": "5"
+								}
+							]
+						},
+						"description": "Once authenticated, gets tweets data from the db ordering by the most recent created."
+					},
+					"response": []
+				},
+				{
+					"name": "tweets + RQL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzIyNjU3LCJpYXQiOjE3Mjk2ODY2NTcsImp0aSI6ImFiZGQ5MTBmNTQzMjRjM2E5YWZkNGI1NTJhOTkzOGY4IiwidXNlcl9pZCI6OH0.QGNgTLLQd7stG8PcKpkYSEenszUGdO2tM7mr4tXLDCU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tweets/?eq(author,bob)",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tweets",
+								""
+							],
+							"query": [
+								{
+									"key": "eq(author,bob)",
+									"value": null
+								}
+							]
+						},
+						"description": "Once authenticated, gets tweets data from the especific user by your username."
+					},
+					"response": []
+				},
+				{
+					"name": "tweets + RQL ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzIyNjU3LCJpYXQiOjE3Mjk2ODY2NTcsImp0aSI6ImFiZGQ5MTBmNTQzMjRjM2E5YWZkNGI1NTJhOTkzOGY4IiwidXNlcl9pZCI6OH0.QGNgTLLQd7stG8PcKpkYSEenszUGdO2tM7mr4tXLDCU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tweets/?eq(author_id,2)",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tweets",
+								""
+							],
+							"query": [
+								{
+									"key": "eq(author_id,2)",
+									"value": null
+								}
+							]
+						},
+						"description": "Once authenticated, gets tweets data from the especific user by your ID."
+					},
+					"response": []
+				},
+				{
+					"name": "user-feed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzQzMjg2LCJpYXQiOjE3Mjk3MDcyODYsImp0aSI6IjdiYTAwNjlhNjIwYjRiNGQ4OTliYWRlMzdmYTQzN2Y2IiwidXNlcl9pZCI6OH0.y6OmbE5nPTG-9DWuJLEMy6PD3cddkZcBCWweCfVjyO8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tweets/user-feed/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tweets",
+								"user-feed",
+								""
+							]
+						},
+						"description": "Once authenticated, gets tweets data from all users that the authenticated user is following."
+					},
+					"response": []
+				},
+				{
+					"name": "search tweet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzE4Mjg2LCJpYXQiOjE3Mjk2ODIyODYsImp0aSI6IjQ3ZDBkNjg2ZDNmZTQzOWVhNmZmZDVjYTliMWJjNjAxIiwidXNlcl9pZCI6OH0.qQ8iBeE6MhI0wfP_y1xrzaCtWiYPtUHmG7FxY3p4kuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tweets/?ilike(content,*usuário 3*)",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tweets",
+								""
+							],
+							"query": [
+								{
+									"key": "ilike(content,*usuário 3*)",
+									"value": null
+								}
+							]
+						},
+						"description": "Once authenticated, gets tweets data the has the searched text in its content tweets.\n\nIts using RQL for that."
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NTczMDczLCJpYXQiOjE3Mjk1MzcwNzMsImp0aSI6IjEzNDA2N2EzYTJiZDQ2ZWI4NDI0ODdkMTE0NWU1ZDAxIiwidXNlcl9pZCI6OH0.NR4B6aTRNQauKg7BUfNkhjxYKTyZHrdfJPWI8tDvDlo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Tesdfasdfasdfasdfasdfte com o author novamente...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tweets/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tweets",
+								""
+							]
+						},
+						"description": "Once authenticated, create a new tweet for the user is authenticated on that moment.\n\nStartFragment\n\n``` json\n{\n    \"content\": \"Content of the tweet...\",\n    \"image\": \"tweet_images/2975235.png\"\n}\n\n ```\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NjMxODkwLCJpYXQiOjE3Mjk1OTU4OTAsImp0aSI6ImJjMjljODFjNWZkNTQzODVhNmFjM2EzY2NlZDMwZWI2IiwidXNlcl9pZCI6M30.HhhQA6ENQRUjmnfxZHFT7b1VQ1GVbY42MnKrLRL8XDY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Testando edição do author sem permissão Agora com o Patch\",\r\n    \"author\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tweets/351/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tweets",
+								"351",
+								""
+							]
+						},
+						"description": "Once authenticated, update the tweet. Only the user that created (owner) the tweet can modify (edit or delete)."
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NjMxODkwLCJpYXQiOjE3Mjk1OTU4OTAsImp0aSI6ImJjMjljODFjNWZkNTQzODVhNmFjM2EzY2NlZDMwZWI2IiwidXNlcl9pZCI6M30.HhhQA6ENQRUjmnfxZHFT7b1VQ1GVbY42MnKrLRL8XDY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Agora sem o author\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tweets/351/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tweets",
+								"351",
+								""
+							]
+						},
+						"description": "Once authenticated, parcial update the tweet. Only the user that created (owner) the tweet can modify (edit or delete)."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NjMxODkwLCJpYXQiOjE3Mjk1OTU4OTAsImp0aSI6ImJjMjljODFjNWZkNTQzODVhNmFjM2EzY2NlZDMwZWI2IiwidXNlcl9pZCI6M30.HhhQA6ENQRUjmnfxZHFT7b1VQ1GVbY42MnKrLRL8XDY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tweets/104/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tweets",
+								"104",
+								""
+							]
+						},
+						"description": "Once authenticated, delete the tweet. Only the user that created (owner) the tweet can modify (edit or delete)."
+					},
+					"response": []
+				}
+			],
+			"description": "Tweets data"
+		},
+		{
+			"name": "follows",
+			"item": [
+				{
+					"name": "follows",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5ODI2NDA5LCJpYXQiOjE3Mjk3OTA0MDksImp0aSI6IjEzODYwY2VjM2ViOTQ5OWZhODZhNWFkM2RhM2QxMGNmIiwidXNlcl9pZCI6OH0.m6-DOAT36lO4JmeQEKEyr_Y-mzEr4KcW_EOsoSLnNuo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/follows/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"follows",
+								""
+							]
+						},
+						"description": "Once authenticated, gets a list of followers and followings."
+					},
+					"response": []
+				},
+				{
+					"name": "follows + RQL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzE4Mjg2LCJpYXQiOjE3Mjk2ODIyODYsImp0aSI6IjQ3ZDBkNjg2ZDNmZTQzOWVhNmZmZDVjYTliMWJjNjAxIiwidXNlcl9pZCI6OH0.qQ8iBeE6MhI0wfP_y1xrzaCtWiYPtUHmG7FxY3p4kuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/follows/?eq(id,1)",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"follows",
+								""
+							],
+							"query": [
+								{
+									"key": "eq(id,1)",
+									"value": null
+								}
+							]
+						},
+						"description": "Once authenticated, gets a specific instance of followers and followings from db by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "cretate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzIyNjU3LCJpYXQiOjE3Mjk2ODY2NTcsImp0aSI6ImFiZGQ5MTBmNTQzMjRjM2E5YWZkNGI1NTJhOTkzOGY4IiwidXNlcl9pZCI6OH0.QGNgTLLQd7stG8PcKpkYSEenszUGdO2tM7mr4tXLDCU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"following\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/follows/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"follows",
+								""
+							]
+						},
+						"description": "Once authenticated, create a instance of following other users. So the authenticanted users can follow other user."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NjM2MDk5LCJpYXQiOjE3Mjk2MDAwOTksImp0aSI6IjYxZTZmMGQ3YWVkYTQ0NmI4MzA1Nzc1Y2YxNTYyM2M0IiwidXNlcl9pZCI6OH0.E-qRrQgaV_fCfolwwKQxd1IlMMz6abV83HJMEXAGz2w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"follower\": 3,\r\n    \"following\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/follows/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"follows",
+								"1",
+								""
+							]
+						},
+						"description": "Even requesting a authenticated user to access this endpoint, this method is not allowed. Just create (POST) and DELETE is allowed."
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NjM2MDk5LCJpYXQiOjE3Mjk2MDAwOTksImp0aSI6IjYxZTZmMGQ3YWVkYTQ0NmI4MzA1Nzc1Y2YxNTYyM2M0IiwidXNlcl9pZCI6OH0.E-qRrQgaV_fCfolwwKQxd1IlMMz6abV83HJMEXAGz2w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"following\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/follows/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"follows",
+								"1",
+								""
+							]
+						},
+						"description": "Even requesting a authenticated user to access this endpoint, this method is not allowed. Just create (POST) and DELETE is allowed."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzIzMzA2LCJpYXQiOjE3Mjk2ODczMDYsImp0aSI6ImQ0YmIwMTk3MGExYTRjOGVhM2VmMTM4ZTZlZDY0OGFiIiwidXNlcl9pZCI6M30.eetcZxz--QZ4fQLqhrrE-yR8-MRe-RUXp3hC_mmPVic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/follows/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"follows",
+								"3",
+								""
+							]
+						},
+						"description": "Once authenticated, the user can DELETE (unfollow) other user. Only the user that owns (is the follower) can alter his instance, so he can create (the follower never can change once created) or delete it. The PUT and PATCH its not allowed."
+					},
+					"response": []
+				},
+				{
+					"name": "follow-counts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5ODI2NDA5LCJpYXQiOjE3Mjk3OTA0MDksImp0aSI6IjEzODYwY2VjM2ViOTQ5OWZhODZhNWFkM2RhM2QxMGNmIiwidXNlcl9pZCI6OH0.m6-DOAT36lO4JmeQEKEyr_Y-mzEr4KcW_EOsoSLnNuo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/follows/follow-counts/?user_id=3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"follows",
+								"follow-counts",
+								""
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "3"
+								}
+							]
+						},
+						"description": "Onde authenticated, returned with the numbers of followers (number of users if following him) and followings (number of users is followed by the authenticated)."
+					},
+					"response": []
+				}
+			],
+			"description": "Follows data"
+		},
+		{
+			"name": "likes",
+			"item": [
+				{
+					"name": "likes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzE4Mjg2LCJpYXQiOjE3Mjk2ODIyODYsImp0aSI6IjQ3ZDBkNjg2ZDNmZTQzOWVhNmZmZDVjYTliMWJjNjAxIiwidXNlcl9pZCI6OH0.qQ8iBeE6MhI0wfP_y1xrzaCtWiYPtUHmG7FxY3p4kuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/likes/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"likes",
+								""
+							]
+						},
+						"description": "Onde authenticated, gets all likes data from db."
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NjY5NzMwLCJpYXQiOjE3Mjk2MzM3MzAsImp0aSI6Ijg5OGYwZTM5ZGM1ODQ1MzZiNTg5YjkyOTRlMjFjNTc5IiwidXNlcl9pZCI6MX0.kWWvbS2z4xiXZCQuy0wLSMBGCUkYEG9UELlXQchybnk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tweet\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/likes/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"likes",
+								""
+							]
+						},
+						"description": "Once authenticated, creates a like instance on db, abstraction of a like of a specific tweet."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NjY4Njk2LCJpYXQiOjE3Mjk2MzI2OTYsImp0aSI6IjIxMWYyMWI2ODkwZDQzNzFhNDM5ODRiNzY3ZDZiZGY0IiwidXNlcl9pZCI6M30.oOd-fipN3vAQ00Nnu5fACWrG-b7dD1z29egtpcPhP70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tweet\": 3,\r\n    \"created_at\": \"2024-10-22T18:32:22.333772-09:00\",\r\n    \"user\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/likes/6/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"likes",
+								"6",
+								""
+							]
+						},
+						"description": "Even requesting a authenticated user to access this endpoint, this method is not allowed. Just create (POST) and DELETE is allowed."
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NjY4Njk2LCJpYXQiOjE3Mjk2MzI2OTYsImp0aSI6IjIxMWYyMWI2ODkwZDQzNzFhNDM5ODRiNzY3ZDZiZGY0IiwidXNlcl9pZCI6M30.oOd-fipN3vAQ00Nnu5fACWrG-b7dD1z29egtpcPhP70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/likes/6/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"likes",
+								"6",
+								""
+							]
+						},
+						"description": "Even requesting a authenticated user to access this endpoint, this method is not allowed. Just create (POST) and DELETE is allowed."
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NjM2MDk5LCJpYXQiOjE3Mjk2MDAwOTksImp0aSI6IjYxZTZmMGQ3YWVkYTQ0NmI4MzA1Nzc1Y2YxNTYyM2M0IiwidXNlcl9pZCI6OH0.E-qRrQgaV_fCfolwwKQxd1IlMMz6abV83HJMEXAGz2w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/likes/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"likes",
+								"3",
+								""
+							]
+						},
+						"description": "Once authenticated, the user can DELETE (unlike) a tweet. Only the user that owns (create that instance) can alter it, so he can create or delete it. The PUT and PATCH its not allowed."
+					},
+					"response": []
+				},
+				{
+					"name": "tweet-likes-count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NzE4Mjg2LCJpYXQiOjE3Mjk2ODIyODYsImp0aSI6IjQ3ZDBkNjg2ZDNmZTQzOWVhNmZmZDVjYTliMWJjNjAxIiwidXNlcl9pZCI6OH0.qQ8iBeE6MhI0wfP_y1xrzaCtWiYPtUHmG7FxY3p4kuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/likes/tweet-likes-count/?tweet=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"likes",
+								"tweet-likes-count",
+								""
+							],
+							"query": [
+								{
+									"key": "tweet",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Once authenticated, gets the number of likes of a specific tweet."
+					},
+					"response": []
+				}
+			],
+			"description": "Likes data"
+		}
+	]
+}
