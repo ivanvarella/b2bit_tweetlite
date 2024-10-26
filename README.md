@@ -314,8 +314,8 @@ back/                           # Main folder containing the entire backend proj
 ## ERD Diagram
 
 <p align="center">
-    <a href="tweetlite_ERD_diagram.png" target="_blank">
-        <img src="tweetlite_ERD_diagram.png" alt="TweetLite ERD Diagram" width="1000"/>
+    <a href="back/tweetlite_ERD_diagram.png" target="_blank">
+        <img src="back/tweetlite_ERD_diagram.png" alt="TweetLite ERD Diagram" width="1000"/>
     </a>
 </p>
 
