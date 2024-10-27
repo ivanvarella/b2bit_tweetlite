@@ -96,13 +96,7 @@
    pip install -r requirements.txt
    ```
 
-5. **Generate a new Django SECRET_KEY and copy it on .env file (step 6)**
-
-   ```bash
-   python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
-   ```
-
-6. **Rename the .env.exemple to .env and fill the content as needed**
+5. **Rename the .env.exemple to .env and fill the content as needed**
 
    #### Ps: If you want to use SQLite as DataBase, just igonore the DATABASE Configuration on .env file, otherwise insert the Postgres configuration on DATABASE part.
 
@@ -125,6 +119,12 @@
    DATABASE_PASSWORD="user password"
    DATABASE_HOST="address"
    DATABASE_PORT="5432"
+   ```
+
+6. **Generate a new Django SECRET_KEY and copy it on .env file (step 6)**
+
+   ```bash
+   python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
    ```
 
 ## For SQLite
