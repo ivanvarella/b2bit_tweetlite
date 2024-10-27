@@ -347,7 +347,7 @@ back/                           # Main folder containing the entire backend proj
    With the Django project running and after installing the dependencies, you can start the development server with the following command:
 
    ```bash
-   npm install
+   npm run dev
    ```
 
 4. **Open in Your Browser**
