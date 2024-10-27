@@ -110,8 +110,8 @@
    # JWT
    ROTATE_REFRESH_TOKENS="True"
    BLACKLIST_AFTER_ROTATION="True"
-   ACCESS_TOKEN_LIFETIME="xx"
-   REFRESH_TOKEN_LIFETIME="x"
+   ACCESS_TOKEN_LIFETIME="15"
+   REFRESH_TOKEN_LIFETIME="1"
 
    # DATABASE (local: postgres, production: postgres)
    DATABASE_NAME="postgres"
@@ -121,7 +121,9 @@
    DATABASE_PORT="5432"
    ```
 
-6. **Generate a new Django SECRET_KEY and copy it on .env file (step 6)**
+6. **Configure the JWT as needed on .env file.**
+
+7. **Generate a new Django SECRET_KEY and copy it on .env file (step 5)**
 
    ```bash
    python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
@@ -129,7 +131,7 @@
 
 ## For SQLite
 
-7. **Configure the settings.py File**
+8. **Configure the settings.py File**
 
 #### In the settings.py file (tweetlite/settings.py), just remove the comments for this DATABASE Configuration:
 
@@ -148,7 +150,7 @@ DATABASES = {
 
 ## For Postgres
 
-7. **Configure the settings.py File**
+8. **Configure the settings.py File**
 
 #### In the settings.py file (tweetlite/settings.py), just remove the comments for this DATABASE Configuration:
 
@@ -167,14 +169,14 @@ DATABASES = {
 
 Ps: On this steep you should already been configured the .env with the Postgres DB conection configuration.
 
-8. **Create the Database Tables**
+9. **Create the Database Tables**
 
 ```bash
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
-9. **Create a Superuser in Django**
+10. **Create a Superuser in Django**
 
 ```bash
 python3 manage.py createsuperuser
@@ -189,7 +191,7 @@ Password: ********
 Password (again): ********
 ```
 
-10. **Not mandatory: Populate the DataBase with test data**
+11. **Not mandatory: Populate the DataBase with test data**
 
 #### The passwords for all users created will be: password123
 
@@ -197,13 +199,13 @@ Password (again): ********
 python3 manage.py populate_db --settings=tweetlite.settings
 ```
 
-11. **Start the Server**
+12. **Start the Server**
 
 ```bash
 python3 manage.py runserver
 ```
 
-12. **Access the Application**
+13. **Access the Application**
 
 ### After starting the server, you can access the application via a web browser:
 
