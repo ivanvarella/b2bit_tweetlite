@@ -263,7 +263,6 @@ back/                           # Main folder containing the entire backend proj
 │   ├── models.py               # Models representing follow relationships
 │   ├── permissions.py          # Permissions for follow-related actions
 │   ├── serializers.py          # Serializers for API representation of follows
-│   ├── tests.py                # Tests for follow functionality
 │   ├── urls.py                 # URL routing for follower-related endpoints
 │   └── views.py                # API views for follow/unfollow actions
 ├── likes/                      # App for managing likes on tweets
@@ -273,7 +272,6 @@ back/                           # Main folder containing the entire backend proj
 │   ├── models.py               # Models representing likes on tweets
 │   ├── permissions.py          # Permissions for like-related actions
 │   ├── serializers.py          # Serializers for API representation of likes
-│   ├── tests.py                # Tests for like functionality
 │   ├── urls.py                 # URL routing for like-related endpoints
 │   └── views.py                # API views for like/unlike actions
 ├── manage.py                   # Django management script
@@ -294,7 +292,6 @@ back/                           # Main folder containing the entire backend proj
 │   ├── permissions.py          # Permissions for tweet-related actions
 │   ├── serializers.py          # Serializers for API representation of tweets
 │   ├── signals.py              # Signals for event-driven tweet functionality
-│   ├── tests.py                # Tests for tweet functionality
 │   ├── urls.py                 # URL routing for tweet-related endpoints
 │   └── views.py                # API views for tweet actions (e.g., creating, viewing)
 └── users/                      # App for managing user accounts and profiles
@@ -305,7 +302,6 @@ back/                           # Main folder containing the entire backend proj
     ├── permissions.py          # Permissions for user-related actions
     ├── serializers.py          # Serializers for API representation of users
     ├── signals.py              # Signals for event-driven user functionality
-    ├── tests.py                # Tests for user functionality
     ├── urls.py                 # URL routing for user-related endpoints
     └── views.py                # API views for user actions (e.g., registration, profile updates)
 
