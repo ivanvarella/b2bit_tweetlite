@@ -10,7 +10,7 @@
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [How to Run the Project](#how-to-run-the-project)
+- [How to Run the Project (backend with Django)](#how-to-run-the-project)
 - [Project Structure](#project-structure)
 - [Running with SQLite](#for-sqlite)
 - [Running with Postgres](#for-postgres)
@@ -19,6 +19,7 @@
 - [Dependencies](#dependencies)
 - [Backend Repository Structure](#backend-repository-structure)
 - [ERD Diagram](#erd-diagram)
+- [How to Run the Project (frontend with React)](#front-end-with-react)
 
 ## Features
 
